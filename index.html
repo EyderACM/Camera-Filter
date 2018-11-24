@@ -13,24 +13,33 @@
     <div class="photobooth"> 
         <div class="controls">
             <div class="rgb">
-                <label for="rmin">Red Min:</label>
-                <input type="range" min="0" max="255" name="rmin">
-                <label for="rmax">Red Max:</label>
-                <input type="range" min="0" max="255" name="rmax">
 
-                <br>
+                <div class="slider">
+                    <label for="rmin">Red Min:</label>
+                    <input type="range" min="0" max="255" name="rmin">
+                </div>
+                <div class="slider">
+                    <label for="rmax">Red Max:</label>
+                    <input type="range" min="0" max="255" name="rmax">
+                </div>                
 
-                <label for="gmin">Green Min:</label>
-                <input type="range" min="0" max="255" name="gmin">
-                <label for="gmax">Green Max:</label>
-                <input type="range" min="0" max="255" name="gmax">
+                <div class="slider">
+                    <label for="gmin">Green Min:</label>
+                    <input type="range" min="0" max="255" name="gmin">
+                </div>
+                <div class="slider">
+                    <label for="gmax">Green Max:</label>
+                    <input type="range" min="0" max="255" name="gmax">
+                </div>                
 
-                <br>
-
-                <label for="bmin">Blue Min:</label>
-                <input type="range" min="0" max="255" name="bmin">
-                <label for="bmax">Blue Max:</label>
-                <input type="range" min="0" max="255" name="bmax">
+                <div class="slider">
+                    <label for="bmin">Blue Min:</label>
+                    <input type="range" min="0" max="255" name="bmin">
+                </div>
+                <div class="slider">
+                    <label for="bmax">Blue Max:</label>
+                    <input type="range" min="0" max="255" name="bmax">
+                </div>
             </div>
             <button onClick ="takePhoto()">Take Photo</button>
         </div>
@@ -41,6 +50,6 @@
     </div>
         
     <script src="main.js"></script>
-    
+
 </body>
 </html>
