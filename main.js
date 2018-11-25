@@ -9,7 +9,36 @@ function getVideo() {
         .then(localMediaStream => {
             video.src = window.URL.createObjectURL(localMediaStream);
             video.play();
+        }).catch(err => {
+            console.error('Crap', err);
         });
 }
 
+function paintToCanvas(){
+    const width = video.videoWidth;
+    const height = video.videoHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    return setInterval(() => {
+        ctx.drawImage(video, 0, 0, width, height);
+    }, 16);
+}
+
+function takePhoto() {
+    //Play sound
+    snap.currentTime = 0;
+    snap.play();
+
+    //take data out of the canvas
+    const data = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = data;
+    link.setAttribute('download', 'handsome');
+    link.innerHTML = `<img src="${data}" alt="Handsome dude" />`;
+    strip.insertBefore(link, strip.firstChild);
+}
+
 getVideo();
+
+video.addEventListener('canplay', paintToCanvas);
